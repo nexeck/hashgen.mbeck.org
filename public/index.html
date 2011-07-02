@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8 />
+        <title>Hash Generator</title>
+        <meta name="google-site-verification" content="vLD-KqmqMz7yBE6QyAglFM7gPAjSVHbS3Vwxe8vBBks" />
+        <meta name="DC.title" content="Online Hash Generator" />
+        <meta name="DC.creator" content="Marcel Beck" />
+        <meta name="DC.contributor" content="Marcel Beck" />
+        <meta name="DC.type" content="Service" />
+        <meta name="DC.language" content="de,en" />
+        <meta name="DC.subject" content="Online Hash Generator" />
+        <meta name="DC.description" content="Online Hash Generator" />
+        <meta name="DC.publisher" content="Marcel Beck" />
+        <meta name="DC.rights" content="Copyright 2010 by Marcel Beck" />
+
+        <meta name="description" content="Online Hash Generator" />
+        <meta name="keywords" content="hashgenerator, hash, generator, hash generator, hashes generieren, generate hashes, md5, md4, md2, sha-1, sha, secure hash algorithm, whirlpool, ripe md" />
+        <meta name="author" content="Marcel Beck" />
+
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/default.css" />
+        <link rel="stylesheet" type="text/css" href="css/tabs.css" />
+
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+        <script type="text/javascript" src="js/hash.min.js"></script>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-18658368-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    </head>
+
+
+    <body>
+        <div id="page">
+
+            <div id="header" class="rounded box-shadow">
+                <h1>Online Hash Generator</h1>
+                <div class="clear"></div>
+            </div>
+            <form action="#" method="post">
+                <div id="hashalgos" class="rounded box-shadow">
+                    <!-- the tabs -->
+                    <ul class="tabs">
+                        <li><a href="#">Main</a></li>
+                        <li><a href="#">SHA</a></li>
+                        <li><a href="#">RIPEMD</a></li>
+                        <li><a href="#">Tiger</a></li>
+                        <li><a href="#">HAVAL</a></li>
+                        <li><a href="#">Senfru</a></li>
+                        <li><a href="#">Salsa</a></li>
+                    </ul>
+
+                    <div class="panes">
+                        <div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="1">MD2</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="2">MD4</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="3">MD5</label></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><label><input type="radio" name="hashfunction" value="38">GOST</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="39">Adler-32</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="40">CRC-32</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="41">CRC-32B</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="42">Whirlpool</label></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td><label><input type="radio" name="hashfunction" value="4">SHA-1</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="5">SHA-224</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="6">SHA-256</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="7">SHA-384</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="8">SHA-512</label></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="9">RIPEMD-128</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="10">RIPEMD-160</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="11">RIPEMD-256</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="12">RIPEMD-320</label></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="13">Tiger-128,3</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="14">Tiger-160,3</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="15">Tiger-192,3</label></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="16">Tiger-128,4</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="17">Tiger-160,4</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="18">Tiger-192,4</label></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td><label><input type="radio" name="hashfunction" value="19">HAVAL-128,3</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="20">HAVAL-160,3</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="21">HAVAL-192,3</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="22">HAVAL-224,3</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="23">HAVAL-256,3</label></td>
+                                </tr>
+                                <tr>
+                                    <td><label><input type="radio" name="hashfunction" value="24">HAVAL-128,4</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="25">HAVAL-160,4</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="26">HAVAL-192,4</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="27">HAVAL-224,4</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="28">HAVAL-256,4</label></td>
+                                </tr>
+                                <tr>
+                                    <td><label><input type="radio" name="hashfunction" value="29">HAVAL-128,5</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="30">HAVAL-160,5</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="31">HAVAL-192,5</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="32">HAVAL-224,5</label></td>
+                                    <td><label><input type="radio" name="hashfunction" value="33">HAVAL-256,5</label></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="34">Snefru</label></td>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="35">Snefru-256</label></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="36">Salsa-10</label></td>
+                                    <td></td>
+                                    <td><label><input type="radio" name="hashfunction" value="37">Salsa-20</label></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div id="content" class="rounded box-shadow">
+                    <div>
+                        <h2>Nachricht</h2>
+                        <p>
+                            <input class="string" type="text" name="string" id="string" maxlength="1024" />
+                        </p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div id ="result" class="rounded box-shadow">
+                    <textarea rows="0" cols="0" style="overflow:auto;" class="hash" name="hash" id="hash" readonly="readonly"></textarea>
+                    <div class="clear"></div>
+                </div>
+            </form>
+
+            <div id="footer" class="rounded box-shadow">
+                &copy; 2010 by <strong><a href="http://mbeck.org" onclick="window.open(this.href,'_blank'); return false;">Marcel Beck</a></strong>
+
+                <ul>
+                    <li><a href="http://pwgen.org" onclick="window.open(this.href,'_blank'); return false;">pwgen.org</a></li>
+                </ul>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="likeit">
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fhashgen.org&amp;layout=button_count&amp;show_faces=true&amp;width=100&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+        </div>
+
+    </body>
+</html>
